@@ -29,9 +29,9 @@ public enum TipoCliente {
 			return null;
 		}
 		
-		for(TipoCliente x : TipoCliente.values()) {
-			if(cod.equals(x.getCod())) {
-				return x;
+		for(TipoCliente val : TipoCliente.values()) {
+			if(cod.equals(val.getCod())) {
+				return val;
 			}
 		}
 		throw new IllegalArgumentException("Id inválido: " + cod);
