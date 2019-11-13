@@ -62,7 +62,7 @@ public class ItemPedido implements Serializable{
 	public void setId(ItemPedidoPK id) {
 		this.id = id;
 	}
-
+	@JsonIgnore
 	public Double getDesconto() {
 		return desconto;
 	}
@@ -70,7 +70,7 @@ public class ItemPedido implements Serializable{
 	public void setDesconto(Double desconto) {
 		this.desconto = desconto;
 	}
-
+	@JsonIgnore
 	public Integer getQuantidade() {
 		return quantidade;
 	}
@@ -78,7 +78,7 @@ public class ItemPedido implements Serializable{
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
-
+	@JsonIgnore
 	public Double getPreco() {
 		return preco;
 	}
