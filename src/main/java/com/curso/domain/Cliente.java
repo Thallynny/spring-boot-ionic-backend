@@ -18,11 +18,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.curso.domain.enums.Perfil;
 import com.curso.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -40,9 +38,7 @@ public class Cliente implements Serializable {
 	private String cpfOuCnpj;
 	private Integer tipo;
 	
-	/*@JsonIgnore
-	private String senha;*/
-	@JsonManagedReference
+
 	@OneToMany(mappedBy="cliente", cascade=CascadeType.ALL)
 	private List<Endereco> enderecos = new ArrayList<>();
 	
@@ -55,7 +51,7 @@ public class Cliente implements Serializable {
 	@CollectionTable(name="PERFIS")
 	private Set<Integer> perfis = new HashSet<>();
 	
-	@JsonBackReference
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
